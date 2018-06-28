@@ -150,6 +150,10 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
     /data/tombstones:/tombstones \
     /mnt/vendor/persist:/persist
 
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
+
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
