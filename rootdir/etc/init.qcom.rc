@@ -626,3 +626,12 @@ service vendor.power /vendor/bin/hw/android.hardware.power-service-qti
     class hal
     user system
     group system input
+
+service vendor.hwcomposer-2-3 /vendor/bin/hw/android.hardware.graphics.composer@2.3-service
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    socket pps stream 0660 system system
+    writepid /dev/cpuset/system-background/tasks
