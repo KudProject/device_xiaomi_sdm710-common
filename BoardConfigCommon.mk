@@ -139,4 +139,4 @@ BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Inherit from the proprietary version
--include vendor/xiaomi/sdm710-common/BoardConfigVendor.mk
+#-include vendor/xiaomi/sdm710-common/BoardConfigVendor.mk
