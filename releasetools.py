@@ -70,6 +70,6 @@ def AddVendorAssertion(info, input_zip):
   if v and miui_version:
     build_date_utc, vndk_version = v.group(1).rstrip().split(',')
     firmware_version = miui_version.group(1).rstrip()
-    cmd = 'assert(xiaomi.verify_vendor("{}", "{}") == "1" || abort("ERROR: This package requires vendor from MIUI {} developer build or newer. Please upgrade vendor image along with matching firmware and retry!"););'
+    cmd = 'assert(xiaomi.verify_vendor("{}", "{}") == "1" || abort("ERROR: This package requires vendor from MIUI {} developer build. Please upgrade vendor image and retry!"););'
     info.script.AppendExtra(cmd.format(build_date_utc, vndk_version, firmware_version))
   return
