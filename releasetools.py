@@ -1,6 +1,7 @@
 # Copyright (C) 2009 The Android Open Source Project
 # Copyright (c) 2011, The Linux Foundation. All rights reserved.
 # Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2019 The XenonHD Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -69,7 +70,11 @@ def AddVendorAssertion(info, input_zip):
   miui_version = re.search(r'require\s+version-miui\s*=\s*(.+)', android_info)
   if v and miui_version:
     build_date_utc, vndk_version = v.group(1).rstrip().split(',')
+    build_date_utcs = build_date_utc.split('|')
     firmware_version = miui_version.group(1).rstrip()
-    cmd = 'assert(xiaomi.verify_vendor("{}", "{}") == "1" || abort("ERROR: This package requires vendor from MIUI {} developer build. Please upgrade vendor image and retry!"););'
-    info.script.AppendExtra(cmd.format(build_date_utc, vndk_version, firmware_version))
+    cmd = 'assert('
+    for date in range(0, len(build_date_utcs)):
+        cmd += 'xiaomi.verify_vendor("' + build_date_utcs[date] + '", "{1}") == "1" || '
+    cmd += 'abort("ERROR: This package requires vendor from MIUI {2} build. Please upgrade vendor image and retry!"););'
+    info.script.AppendExtra(cmd.format(build_date_utcs, vndk_version, firmware_version))
   return
