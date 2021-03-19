@@ -1,3 +1,5 @@
+# Common proprietary files - from grus's MIUI package V12.0.4.0.QFBMIXM global stable version, unless pinned
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib64/libadsp_default_listener.so
@@ -291,14 +293,14 @@ vendor/lib64/libllvm-glnext.so|c11e3f0f5b6d21d1badcca3bc8cac947c781deeb
 vendor/lib64/libllvm-qcom.so|a80c58c8f316af15a7a2d089536f824836f6c056
 vendor/lib64/libpvr.so|ac4805ba7a7c78570a60340d01248d258046e456
 
-# Graphics (Adreno firmware) - from grus-user 10 QKQ1.190828.002 V12.0.4.0.QFBEUXM release-keys
-vendor/firmware/a615_zap.b00|e936838535f2ab92351fe034e1c7b45e9be2917c
-vendor/firmware/a615_zap.b01|dff76d795d658fbdb1ef891a020bb5a3d1f4acfb
-vendor/firmware/a615_zap.b02|1724cd8c233e4887cec8b9b18f02c9cd5083238b
-vendor/firmware/a615_zap.elf|ff3958fadce6076e6123f3c6ef2dd8facc65c66a
-vendor/firmware/a615_zap.mdt|1e3c2bdad559479bec7ab5d15dae9049e83cf342
-vendor/firmware/a630_gmu.bin|32bb4acc7767c47ddb487ed7cb998d465ee462f2
-vendor/firmware/a630_sqe.fw|e7eed1455b2a051f07a3093506f87788b5969949
+# Graphics (Adreno firmware)
+vendor/firmware/a615_zap.b00
+vendor/firmware/a615_zap.b01
+vendor/firmware/a615_zap.b02
+vendor/firmware/a615_zap.elf
+vendor/firmware/a615_zap.mdt
+vendor/firmware/a630_gmu.bin
+vendor/firmware/a630_sqe.fw
 
 # Graphics (Vulkan) - from PNX - RKQ1.200906.002
 vendor/lib/hw/vulkan.adreno.so|b2680e5b899d75fa3f82b457635e15c6998202a4
@@ -379,15 +381,15 @@ vendor/lib/libqti-iopd-client.so
 vendor/lib/vendor.qti.hardware.iop@1.0.so
 vendor/lib/vendor.qti.hardware.iop@2.0.so
 
-# IPA firmware - from grus-user 10 QKQ1.190828.002 V12.0.4.0.QFBEUXM release-keys
-vendor/etc/init/ipa_fws.rc|509042b86b4953ca1dc1b420942d9ded839ee502
-vendor/firmware/ipa_fws.b00|b2fca0cfa8e0bda146247c77ee4e3b051340b5c8
-vendor/firmware/ipa_fws.b01|c0dd0d04d122274ee8d67fd196407ffabcc41fb3
-vendor/firmware/ipa_fws.b02|f3d7897df5adfbb026a8b88b8364e76a778dc75b
-vendor/firmware/ipa_fws.b03|c07cfef57f8f694b4cee41e78700614efbedf2bc
-vendor/firmware/ipa_fws.b04|e3552692a635dceca369cab6d9349091b669c80a
-vendor/firmware/ipa_fws.elf|6131eb06d1b28d7aed12111d577775450d3823b4
-vendor/firmware/ipa_fws.mdt|5115f1bf9b4f8a7f43100ae8eea62227437c8ce5
+# IPA firmware
+vendor/etc/init/ipa_fws.rc
+vendor/firmware/ipa_fws.b00
+vendor/firmware/ipa_fws.b01
+vendor/firmware/ipa_fws.b02
+vendor/firmware/ipa_fws.b03
+vendor/firmware/ipa_fws.b04
+vendor/firmware/ipa_fws.elf
+vendor/firmware/ipa_fws.mdt
 
 # IRQ balance
 vendor/bin/msm_irqbalance
