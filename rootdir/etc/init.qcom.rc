@@ -457,12 +457,6 @@ service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
 
-service vendor.sensors.qti /vendor/bin/sensors.qti
-    class core
-    user system
-    group system
-    disabled
-
 service vendor.cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -494,12 +488,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
-
-service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
-    class core
-    user root
-    oneshot
-    disabled
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
@@ -562,9 +550,6 @@ service vendor.power /vendor/bin/hw/android.hardware.power-service-qti
     user system
     group system input
 
-on property:vold.decrypt=trigger_restart_framework
-    start vendor-sensor-sh
-
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
@@ -594,15 +579,6 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
-
-service thermal-engine /system/vendor/bin/thermal-engine
-    class main
-    user root
-    socket thermal-send-client stream 0666 system system
-    socket thermal-recv-client stream 0660 system system
-    socket thermal-recv-passive-client stream 0666 system system
-    socket thermal-send-rule stream 0660 system system
-    group root
 
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
