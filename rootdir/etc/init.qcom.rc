@@ -56,6 +56,13 @@ on fs
     mkdir /mnt/vendor/persist/wlan_bt 0755 system system
 
 on post-fs
+    # Start service for bootanim
+    start surfaceflinger
+    start bootanim
+    start vendor.hwcomposer-2-3
+    start vendor.configstore-hal
+    start vendor.qti.hardware.display.allocator
+
     chmod 0755 /sys/kernel/debug/tracing
 
     write /dev/ipa 1
